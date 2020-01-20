@@ -1,0 +1,34 @@
+package com.app.dao;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.app.pojos.Packages;
+@Repository
+@Service
+@Transactional
+public class PackageDaoImpl implements IPackageDao {
+@Autowired
+private SessionFactory sf;
+	@Override
+	public String addNewPackage(Packages p1) {
+		System.out.println("inside daopackage");
+		sf.getCurrentSession().save(p1);
+		return p1.getPackageId() + "inserted ...";
+	}
+
+	@Override
+	public List<Packages> showPackages() {
+		// TODO Auto-generated method stub
+		String jpql="select p from Packages p";
+		List<Packages> list=sf.getCurrentSession().createQuery(jpql).getResultList();
+		System.out.println("in package dao"+list);
+		return list;
+	}
+
+}

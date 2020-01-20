@@ -1,0 +1,29 @@
+package com.app.dao;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.app.pojos.User;
+
+public interface IUserDao {
+	
+	public Integer registerUser(User user);
+	public User login(User user);
+	public List<User> alluser();
+	public User findByEmail(String email);
+	public User getUserById(int id);
+	public void updatePassword(User userPojo);
+		
+	}
+
+
+
+/*package com.app.dao;
+
+import com.app.pojos.User;
+
+public interface IUserDao {
+public Integer registerUser(User user);
+}*/

@@ -1,0 +1,26 @@
+package com.app.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.app.pojos.Packages;
+import com.mysql.cj.xdevapi.SessionFactory;
+@Repository
+public class PackageDaoImpl implements IPackageDao {
+@Autowired
+SessionFactory sf;
+	@Override
+	public Packages addNewPackage(Package p1) {
+		
+		return null;
+	}
+
+	@Override
+	public List<Packages> showPackages() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

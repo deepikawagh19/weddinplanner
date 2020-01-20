@@ -1,0 +1,6 @@
+package com.app.dao;
+
+public interface IPackageDao {
+	public Packages addNewPackage(Package p1);
+
+}

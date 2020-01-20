@@ -1,0 +1,12 @@
+package com.app.pojos;
+
+public class Event {
+	private Integer eventId;
+	private String venueName;
+	
+	private int numberOfGuest;
+	private boolean status;
+	private User user;
+	private Planner planner;
+
+}

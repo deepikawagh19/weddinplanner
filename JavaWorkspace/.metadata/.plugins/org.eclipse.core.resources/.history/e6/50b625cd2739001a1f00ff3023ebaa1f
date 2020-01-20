@@ -1,0 +1,128 @@
+package com.app.pojos;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "planner")
+public class Planner 
+{
+private Integer plannerId;
+private String plannerName;
+private  String email;
+private String password;
+private String address;
+private String mobile;
+private int cateringCost;
+private int decorationCost;
+private User user;
+private Event event;
+
+public Planner() {
+	// TODO Auto-generated constructor stub
+}
+
+public Planner(Integer plannerId, String plannerName, String email, String password, String address, String mobile,
+		int cateringCost, int decorationCost) {
+	super();
+	this.plannerId = plannerId;
+	this.plannerName = plannerName;
+	this.email = email;
+	this.password = password;
+	this.address = address;
+	this.mobile = mobile;
+	this.cateringCost = cateringCost;
+	this.decorationCost = decorationCost;
+}
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+public Integer getPlannerId() {
+	return plannerId;
+}
+
+public void setPlannerId(Integer plannerId) {
+	this.plannerId = plannerId;
+}
+@Column(length = 30)
+public String getPlannerName() {
+	return plannerName;
+}
+
+public void setPlannerName(String plannerName) {
+	this.plannerName = plannerName;
+}
+@Column(length = 30, unique = true)
+public String getEmail() {
+	return email;
+}
+
+public void setEmail(String email) {
+	this.email = email;
+}
+@Column(length = 30, unique = true)
+
+public String getPassword() {
+	return password;
+}
+
+public void setPassword(String password) {
+	this.password = password;
+}
+@Column(length = 30)
+
+public String getAddress() {
+	return address;
+}
+
+public void setAddress(String address) {
+	this.address = address;
+}
+@Column(length = 30)
+
+public String getMobile() {
+	return mobile;
+}
+
+public void setMobile(String mobile) {
+	this.mobile = mobile;
+}
+
+public int getCateringCost() {
+	return cateringCost;
+}
+
+public void setCateringCost(int cateringCost) {
+	this.cateringCost = cateringCost;
+}
+
+public int getDecorationCost() {
+	return decorationCost;
+}
+
+public void setDecorationCost(int decorationCost) {
+	this.decorationCost = decorationCost;
+}
+@OneToOne
+public User getUser() {
+	return user;
+}
+
+public void setUser(User user) {
+	this.user = user;
+}
+@OneToOne
+public Event getEvent() {
+	return event;
+}
+
+public void setEvent(Event event) {
+	this.event = event;
+}
+
+@Override
+public String toString() {
+	return "Planner [plannerId=" + plannerId + ", plannerName=" + plannerName + ", email=" + email + ", address="
+			+ address + ", mobile=" + mobile + ", cateringCost=" + cateringCost + ", decorationCost=" + decorationCost
+			+ "]";
+}
+
+}

@@ -1,0 +1,126 @@
+  
+
+
+
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <ul class="nav navbar-nav">
+        <li class="active">
+            <a routerLink="/editprofile">Edit Profile</a>
+        </li>
+        <li>
+            <a routerLink="/changepassword">Change Password</a>
+        </li>
+        <li>
+            <a routerLink="/package">Add New Package</a>
+        </li>
+        <li>
+          <a routerLink="/viewpackage">View Packages</a>
+      </li>
+        
+        
+       
+  
+ 
+       
+    </ul>
+    </nav>
+
+<table class="table">
+<thead class="thead-dark">
+  <tr>
+    <th scope="col">packageId</th>
+    <th scope="col"> cateringCost</th>
+    <th scope="col"> decorationCost</th>
+    <th scope="col">packageName</th>
+    <th scope="col">photographyCost</th>
+    <th scope="col">totalCost</th>
+    <th scope="col">venueCost</th>
+  
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let pkg of data" >
+    <td>{{pkg.packageId}}</td>
+    <td>{{pkg.cateringCost}}</td>
+    <td>{{pkg.decorationCost}}</td>
+    <td>{{pkg.packageName}}</td>
+    <td>{{pkg.photographyCost}}</td>
+    <td>{{pkg.totalCost}}</td>
+    <td>{{pkg.venueCost}}</td>
+    
+
+  </tr>
+</tbody>
+</table>
+    
+<div class="border border-warning" style="margin: 0 auto;width:30%; text-align: center;">
+
+    <form #myForm="ngForm" (ngSubmit)="Add_package(myForm.value)" role="form" >
+  
+    <legend>Add new Package</legend>    
+        <label for="cateringCost">cateringCost</label>
+        <input ngModel type="number" class="form-control" id="cateringCost" name="cateringCost">
+  
+        <label for="decorationCost">decorationCost</label>
+        <input ngModel type="number" class="form-control" id="decorationCost" name="decorationCost">
+    
+        <label for="packageName">packageName</label>
+        <input ngModel type="text" class="form-control" id="packageName" name="packageName">
+    
+         <label for="photographyCost">photographyCost</label>
+        <input ngModel type="number" class="form-control" id="photographyCost" name="photographyCost">
+
+        <label for="venueCost">venueCost</label>
+        <input ngModel type="number" class="form-control" id="venueCost" name="venueCost">
+
+        <label for="totalCost">totalCost</label>
+        <input ngModel type="number" class="form-control" id="totalCost" name="totalCost">
+
+        <label for="totalCost">City</label>
+        <select ngModel type="text"  name="cityName" style="height: 30px;width: 300px;">
+              <option >Select City</option>
+              <!-- <option  *ngFor="let c of cities" value={{c.cityName}}></option> -->
+              <option value="1">Pune</option>
+              <option value="2">Mumbai</option>
+            </select>
+         
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
+</div> 
+ 
+
+
+<!-- <form #myform="ngForm" (ngSubmit)="Add_package(myform)" role="form">
+  <legend>Form title</legend>
+
+  <div class="form-group">
+    packageName 
+    <input type="text" class="form-control" name="packageName" ngModel id="" placeholder="Input field">
+  </div>
+
+  <div class="form-group">
+    decorationCost 
+    <input type="number" class="form-control" name="decorationCost" ngModel id="" placeholder="Input field">
+  </div>
+
+  <div class="form-group">
+    photographyCost 
+    <input type="number" class="form-control" name="photographyCost" ngModel id="" placeholder="Input field">
+  </div>
+
+  <div class="form-group">
+    venueCost 
+    <input type="number" class="form-control" name="venueCost" ngModel id="" placeholder="Input field">
+  </div>
+
+  <div class="form-group">
+    totalCost 
+    <input type="number" class="form-control" name="totalCost" ngModel id="" placeholder="Input field">
+  </div>
+
+  String packageName, int decorationCost, int photographyCost, int venueCost,
+			int totalCost, int cateringCost,City  city -->
+
+  <!-- <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+ 

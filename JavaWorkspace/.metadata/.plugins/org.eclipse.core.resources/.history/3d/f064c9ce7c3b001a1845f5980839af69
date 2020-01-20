@@ -1,0 +1,12 @@
+package com.app.dao;
+
+import java.util.List;
+
+import com.app.pojos.City;
+import com.app.pojos.Packages;
+
+public interface IPackageDao {
+	public Integer addNewPackage(City c);
+
+	List<Packages> showPackages();
+}

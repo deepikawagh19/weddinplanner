@@ -1,0 +1,27 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">packageId</th>
+      <th scope="col"> cateringCost</th>
+      <th scope="col"> decorationCost</th>
+      <th scope="col">packageName</th>
+      <th scope="col">photographyCost</th>
+      <th scope="col">totalCost</th>
+      <th scope="col">venueCost</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pkg of data" >
+      <td>{{pkg.packageId}}</td>
+      <td>{{pkg.cateringCost}}</td>
+      <td>{{pkg.decorationCost}}</td>
+      <td>{{pkg.packageName}}</td>
+      <td>{{pkg.photographyCost}}</td>
+      <td>{{pkg.totalCost}}</td>
+      <td>{{pkg.venueCost}}</td>
+      
+
+    </tr>
+  </tbody>
+</table>

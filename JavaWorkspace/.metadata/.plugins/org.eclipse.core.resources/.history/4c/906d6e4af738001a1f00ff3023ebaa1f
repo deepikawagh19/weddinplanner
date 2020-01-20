@@ -1,0 +1,10 @@
+package com.app.pojos;
+
+public class budget 
+{
+private Integer budget_id;
+private int decoration_cost;
+private int catering_cost;
+private User userid;
+private Event event_id;
+}

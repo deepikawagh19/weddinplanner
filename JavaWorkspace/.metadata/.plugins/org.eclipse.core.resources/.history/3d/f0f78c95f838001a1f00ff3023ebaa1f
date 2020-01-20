@@ -1,0 +1,15 @@
+package com.app.pojos;
+
+public class Planner 
+{
+private Integer plannerId;
+private String plannerName;
+private  String email;
+private String password;
+private String address;
+private String mobile;
+private int cateringCost;
+private int decorationCost;
+private User user;
+private Event event;
+}

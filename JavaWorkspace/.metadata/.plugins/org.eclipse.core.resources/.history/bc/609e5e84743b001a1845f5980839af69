@@ -1,0 +1,21 @@
+package com.app.dao;
+
+import java.util.List;
+
+import com.app.pojos.Packages;
+
+public class PackageDaoImpl implements IPackageDao{
+
+	@Override
+	public String addNewPackage(Packages p1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Packages> showPackages() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

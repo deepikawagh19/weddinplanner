@@ -1,0 +1,39 @@
+package com.app.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+import com.app.pojos.City;
+import com.app.pojos.Packages;
+@CrossOrigin(allowedHeaders = "*")
+@Repository
+@Service
+@Transactional
+public class PackageDaoImpl implements IPackageDao{
+	@Autowired
+	SessionFactory sf;
+	
+
+	@Override
+	public List<Packages> showPackages() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public City addNewPackage(City c) {
+		
+		return (Packages) sf.getCurrentSession().save(c);
+	}
+
+	
+	
+}

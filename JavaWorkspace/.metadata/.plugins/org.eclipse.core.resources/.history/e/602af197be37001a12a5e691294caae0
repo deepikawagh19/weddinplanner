@@ -1,0 +1,12 @@
+package com.app.pojos;
+
+public class User {
+	private Integer userId;
+	private String email;
+	private String password;
+	private UserRole role;
+	private String username;
+
+
+
+}

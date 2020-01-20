@@ -1,0 +1,54 @@
+
+
+
+
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <ul class="nav navbar-nav">
+        <li class="active">
+            <a routerLink="/editprofile">Edit Profile</a>
+        </li>
+        <li>
+            <a routerLink="/changepassword">Change Password</a>
+        </li>
+        <li>
+            <a routerLink="/package">Add New Package</a>
+        </li>
+        <li>
+          <a routerLink="/viewpackage">View Packages</a>
+      </li>
+        
+        
+     
+    </ul>
+    </nav>
+
+<table class="table">
+<thead class="thead-dark">
+  <tr>
+    <th scope="col">packageId</th>
+    <th scope="col"> cateringCost</th>
+    <th scope="col"> decorationCost</th>
+    <th scope="col">packageName</th>
+    <th scope="col">photographyCost</th>
+    <th scope="col">totalCost</th>
+    <th scope="col">venueCost</th>
+  
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let pkg of data" >
+    <td>{{pkg.packageId}}</td>
+    <td>{{pkg.cateringCost}}</td>
+    <td>{{pkg.decorationCost}}</td>
+    <td>{{pkg.packageName}}</td>
+    <td>{{pkg.photographyCost}}</td>
+    <td>{{pkg.totalCost}}</td>
+    <td>{{pkg.venueCost}}</td>
+    
+
+  </tr>
+</tbody>
+</table>
+    
+    
+  

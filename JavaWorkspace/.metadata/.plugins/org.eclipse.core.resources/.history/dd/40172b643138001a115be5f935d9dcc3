@@ -1,0 +1,5 @@
+ackage com.app.pojos;
+
+public enum UserRole {
+USER
+}

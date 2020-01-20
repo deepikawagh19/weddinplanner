@@ -1,0 +1,12 @@
+package com.app.pojos;
+
+public class Packages
+{
+private Integer packageId;
+private String packageName;
+private int decorationCost;
+private int photographyCost;
+private int venueCost;
+private int totalCost;
+private int cateringCost;
+}

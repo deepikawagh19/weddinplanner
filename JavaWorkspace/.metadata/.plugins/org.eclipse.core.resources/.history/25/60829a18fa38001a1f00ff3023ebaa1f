@@ -1,0 +1,9 @@
+package com.app.pojos;
+
+public class Booking {
+	private Integer bookingId;
+	private Planner planner;
+	private User user;
+	private Event event;
+
+}

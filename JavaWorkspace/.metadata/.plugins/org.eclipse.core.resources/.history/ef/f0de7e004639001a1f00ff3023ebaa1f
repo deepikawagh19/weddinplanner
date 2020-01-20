@@ -1,0 +1,34 @@
+package com.app.pojos;
+
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "booking")
+public class Booking {
+	private Integer bookingId;
+public Booking() {
+	// TODO Auto-generated constructor stub
+}
+
+public Booking(Integer bookingId) {
+	super();
+	this.bookingId = bookingId;
+}
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+public Integer getBookingId() {
+	return bookingId;
+}
+public void setBookingId(Integer bookingId) {
+	this.bookingId = bookingId;
+}
+
+
+
+@Override
+public String toString() {
+	return "Booking [bookingId=" + bookingId + "]";
+}
+
+}

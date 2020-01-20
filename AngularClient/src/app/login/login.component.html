@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <ul class="nav navbar-nav">
+        <li class="active">
+            <a routerLink="/home">Home</a>
+        </li>
+        <li>
+            <a routerLink="/aboutus">About Us</a>
+        </li>
+        <li *ngIf="!isLogin">
+            <a routerLink="/login">Login</a>
+    </li>
+
+    <li *ngIf="isLogin">
+            <a (click)="logout()">Logout</a>
+    </li>
+
+</ul>
+</nav>
+<div class="inputBox">
+  <div style="width:40%; text-align: center;">
+      <form role="form" #myForm="ngForm" (ngSubmit)="login(myForm)">
+          <legend>Login Here</legend>
+      
+          <div class="form-group">
+              <label for="name">User Name</label>
+              <input  ngModel type="text" class="form-control" id="name" name="email">
+          </div>
+      
+          <div class="form-group">
+              <label for="password">password</label>
+              <input ngModel type="password" class="form-control " id="password" name="password">
+          </div>
+      
+          <button type="submit" class="btn btn-primary">Login</button>
+          <a routerLink="/register">Register here</a>
+          <span>
+              {{ message }}
+          </span>
+      </form>
+</div>
+
+</div>
+  

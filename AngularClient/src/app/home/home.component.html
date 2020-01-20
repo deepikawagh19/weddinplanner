@@ -1,0 +1,215 @@
+  
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a routerLink="/home">Home</a>
+            </li>
+            <li>
+                <a routerLink="/aboutus">About Us</a>
+            </li>
+            <li>
+                <a routerLink="/user">User</a>
+            </li>
+            <li>
+                <a routerLink="/planner">Planner</a>
+            </li>
+           
+            
+            
+                <li *ngIf="!isLogin">
+                        <a routerLink="/login">Login</a>
+                </li>
+            
+                <li *ngIf="isLogin">
+                        <a (click)="logout()">Logout</a>
+                </li>
+          
+        </ul>
+        </nav>
+        
+<table width=100%>
+<img src="assets/image/2.jpeg">
+
+</table>
+<span>
+    {{message}}
+</span> 
+  
+  <div class="div2" > 
+ <form #myForm="ngForm" (ngSubmit)="search(myForm)" role="form">choose city 
+<table>
+  <tr>
+    <td>
+ <select  type="text" ngModel name="cityName" style="height: 30px;width: 300px;">
+    <option >Select City</option>
+    <option  *ngFor="let c of cities">{{c.cityName}}</option>
+    <!-- <option value="1">Pune</option>
+     <option value="2">Mumbai</option> -->
+  </select>
+</td>
+<td><input type="submit" name="search" value="search" style="height: 30px; width: 200px; ">
+</td>
+</tr>
+</table>       
+</form>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">packageId</th>
+      <th scope="col"> cateringCost</th>
+      <th scope="col"> decorationCost</th>
+      <th scope="col">packageName</th>
+      <th scope="col">photographyCost</th>
+      <th scope="col">totalCost</th>
+      <th scope="col">venueCost</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pkg of data" >
+      <td>{{pkg.packageId}}</td>
+      <td>{{pkg.cateringCost}}</td>
+      <td>{{pkg.decorationCost}}</td>
+      <td>{{pkg.packageName}}</td>
+      <td>{{pkg.photographyCost}}</td>
+      <td>{{pkg.totalCost}}</td>
+      <td>{{pkg.venueCost}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/wee.jpg" class="tales" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/wee2.jpeg" class="tales" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/wee3.jpeg" class="tales" alt="...">
+      </div>
+     
+    </div> 
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+    <div class="container">
+      <h3>Our Vendors</h3>
+      <a class="btn btn-primary" href="Packages" role="button" align="center" >View Packages</a>
+      
+    <div class="row mt-3 ">
+      <div class="col-lg-4">
+          <div class="card">
+              <img src="assets/photo1.jpg" height="200px" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Pune</h5>
+                <p class="card-text">Swapnrang <br>₹80000 </p>
+                <a routerLink="/Kerala" class="btn btn-outline-primary">Booking</a>
+              </div>
+            </div> 
+      </div>
+        <div class="col-lg-5">
+            <div class="card">
+                <img src="assets/venue1.jpg" height="200px" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Pune</h5>
+                  <p class="card-text">Samarth Lawns <br>₹130000 </p>
+                  <a routerLink="/Kerala" class="btn btn-outline-primary">Booking</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+              <img src="assets/decortor1.jpg" height="200px" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Pune</h5>
+                <p class="card-text">Decorators<br>₹10000 </p>
+                <a routerLink="/Kerala" class="btn btn-outline-primary">Booking</a>
+              </div>
+            </div>
+      </div>
+     <div style="width: 100%;background-color: white;position: relative;top: 0px">
+    
+      <div id="slider" style="position: absolute;border-radius: 100px;top: 40px;width: 100%;height: 1000px;">
+      <figure>
+      <img src="/assets/wee.jpg" alt>
+      <img src="/assets/wee2.jpeg" alt>
+      <img src="/assets/wee3.jpeg" alt>
+      <img src="/assets/wee4.jpeg" alt>
+      <img src="assets/wee5.jpeg" alt>
+      </figure>
+      </div> -->
+  
+      <!-- <div class="div12">        
+          <h3 style="position: relative;top: 820px;text-align: center;line-height: 1.5;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,sans-serif;font:50;margin: 20px">
+              <p style="font-size: 15px"> ShaadiSaga is India’s most loved Wedding Planning website! Check prices, 
+                verified reviews and book best wedding photographers, bridal makeup artists, wedding venues, decorators, 
+                and all other wedding vendors at guaranteed best prices. Get loads of latest wedding ideas & 
+                inspiration - bridal fashion, makeup and skincare tips, 
+                wedding planning tips, bachelorette & honeymoon ideas from India's largest wedding community & real weddings. 
+                ShaadiSaga is proud to have been the official wedding planner of celebrities like Yuvraj Singh & Bhuvneshwar Kumar. 
+                We love what we do, and that's how we help plan your wedding like a loved one!
+            </p></h3>
+          </div>
+    <br><br>
+      <div style="background-color: slategrey;position: relative; top: 800px;height: 300px;opacity: 1;color: rgb(241, 239, 76);font-size: 15px">
+    <p style="font-size: 50px;margin: 30px;padding: 30px;">
+      <b>STAYO</b>&nbsp;&nbsp;<span style="font-size: 30px">The World's Fastest Growing Hotel Chain</span></p><hr>
+     ,<div style="position: relative;left: 30px;font-size: 25px"> <a>About Us</a><br><br>
+    <a>Teams/Career</a><br><br>
+    <a>Blogs</a><br><br>
+     <a>Support</a><br>
+      </div><br><br>  <hr>
+      ,<div style="position: relative;left: 30px;font-size: 25px;color: white">
+        <a href="">Facebook</a>&nbsp;&nbsp;
+        <a href="">Instagram</a>&nbsp;&nbsp;
+         <a href="">Twitter</a><br>
+          </div>
+    
+    </div>
+    </div> -->
+  
+ <!-- <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a routerLink="/home">Home</a>
+            </li>
+            <li>
+                <a routerLink="/aboutus">About Us</a>
+            </li>
+            <li>
+                <a routerLink="/user">User</a>
+            </li>
+            <li>
+                <a routerLink="/planner">Planner</a>
+            </li>
+           
+            
+            
+                <li *ngIf="!isLogin">
+                        <a routerLink="/login">Login</a>
+                </li>
+            
+                <li *ngIf="isLogin">
+                        <a (click)="logout()">Logout</a>
+                </li>
+          
+        </ul>
+        </nav>
+        
+<table width=100%>
+<img src="assets/image/2.jpeg">
+
+</table>
+<span>
+    {{message}}
+</span> -->

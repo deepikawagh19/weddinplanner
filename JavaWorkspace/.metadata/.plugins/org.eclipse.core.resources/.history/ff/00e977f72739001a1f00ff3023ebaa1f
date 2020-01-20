@@ -1,0 +1,57 @@
+package com.app.pojos;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "booking")
+public class Booking {
+	private Integer bookingId;
+	private Planner planner;
+	private User user;
+	private Event event;
+public Booking() {
+	// TODO Auto-generated constructor stub
+}
+
+public Booking(Integer bookingId) {
+	super();
+	this.bookingId = bookingId;
+}
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+public Integer getBookingId() {
+	return bookingId;
+}
+public void setBookingId(Integer bookingId) {
+	this.bookingId = bookingId;
+}
+public Planner getPlanner() {
+	return planner;
+}
+public void setPlanner(Planner planner) {
+	this.planner = planner;
+}
+@OneToOne(mappedBy="book",cascade=CascadeType.ALL)
+public User getUser() {
+	return user;
+}
+public void setUser(User user) {
+	this.user = user;
+}
+@OneToOne(mappedBy="event",cascade=CascadeType.ALL)
+public Event getEvent() {
+	return event;
+}
+public void setEvent(Event event) {
+	this.event = event;
+}
+@Override
+public String toString() {
+	return "Booking [bookingId=" + bookingId + "]";
+}
+
+}
